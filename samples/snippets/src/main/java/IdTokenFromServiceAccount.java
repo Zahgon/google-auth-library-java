@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 // [START auth_cloud_idtoken_service_account]
-
 import com.google.auth.oauth2.IdToken;
 import com.google.auth.oauth2.IdTokenProvider.Option;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -28,48 +26,12 @@ import java.util.concurrent.ExecutionException;
 
 public class IdTokenFromServiceAccount {
 
-  public static void main(String[] args)
-      throws IOException, ExecutionException, InterruptedException, GeneralSecurityException {
-    // TODO(Developer): Replace the below variables before running the code.
+    public static void main(String[] args) throws IOException, ExecutionException, InterruptedException, GeneralSecurityException {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 
-    // *NOTE*:
-    // Using service account keys introduces risk; they are long-lived, and can be used by anyone
-    // that obtains the key. Proper rotation and storage reduce this risk but do not eliminate it.
-    // For these reasons, you should consider an alternative approach that
-    // does not use a service account key. Several alternatives to service account keys
-    // are described here:
-    // https://cloud.google.com/docs/authentication/external/set-up-adc
-
-    // Path to the service account json credential file.
-    String jsonCredentialPath = "path-to-json-credential-file";
-
-    // The url or target audience to obtain the ID token for.
-    String targetAudience = "https://example.com";
-
-    getIdTokenFromServiceAccount(jsonCredentialPath, targetAudience);
-  }
-
-  public static void getIdTokenFromServiceAccount(String jsonCredentialPath, String targetAudience)
-      throws IOException {
-
-    // Initialize the Service Account Credentials class with the path to the json file.
-    ServiceAccountCredentials serviceAccountCredentials =
-        ServiceAccountCredentials.fromStream(new FileInputStream(jsonCredentialPath));
-
-    // Obtain the id token by providing the target audience.
-    // tokenOption: Enum of various credential-specific options to apply to the token. Applicable
-    // only for credentials obtained through Compute Engine or Impersonation.
-    List<Option> tokenOption = Arrays.asList();
-    IdToken idToken = serviceAccountCredentials.idTokenWithAudience(targetAudience, tokenOption);
-
-    // The following method can also be used to generate the ID token.
-    // IdTokenCredentials idTokenCredentials = IdTokenCredentials.newBuilder()
-    //     .setIdTokenProvider(serviceAccountCredentials)
-    //     .setTargetAudience(targetAudience)
-    //     .build();
-
-    String token = idToken.getTokenValue();
-    System.out.println("Generated ID token.");
-  }
+    public static void getIdTokenFromServiceAccount(String jsonCredentialPath, String targetAudience) throws IOException {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }
 // [END auth_cloud_idtoken_service_account]
